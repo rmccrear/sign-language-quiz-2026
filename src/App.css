@@ -1,5 +1,13 @@
 
 h1 {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    font-family: Festive;
     color: red;
+    font-size: 64px;
+}
+
+.letter-image {
+    width: 100px;
+    height: 100px;
+    border: solid 2px hotpink;
+    border-radius: 10px;
 }
