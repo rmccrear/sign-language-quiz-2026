@@ -37,11 +37,22 @@ function App() {
     return item.Branch === "Romance"
   }
   const romanceLanguages = records.filter(  (item) => item.Branch === "Romance"  )
-  console.log("Romance Languages", romanceLanguages)
 
-  const romanceLang1 = romanceLanguages[0]
-  const romanceLang2 = romanceLanguages[1]
-  const romanceLang3 = romanceLanguages[2]
+  const romanceSection = romanceLanguages.map( (item) => (
+    <article>
+      <h1>{item.Language}</h1>
+      <p>{item["Speakers in millions"]} million speakers.</p>
+    </article>
+  ) )
+
+  const polynesianLanguages = records.filter(  (item) => item.Branch === "Malayo-Polynesian"  )
+
+  const polynesianSection = polynesianLanguages.map( (item) => (
+    <article>
+      <h1>{item.Language}</h1>
+      <p>{item["Speakers in millions"]} million speakers.</p>
+    </article>
+  ) )
   
   return (
     <>
@@ -74,21 +85,13 @@ function App() {
         <div>
           <h1>Romance Languages</h1>
           <div className="grid">
-            <article>
-              <h1> {romanceLang1.Language}</h1>
-            </article>
-            <article>
-              <h1> {romanceLang2.Language}</h1>
-            </article>
-            <article>
-              <h1> {romanceLang3.Language}</h1>
-            </article>
-            <article>
-              <h1> {romanceLanguages[3].Language}</h1>
-            </article>
-            <article>
-              <h1> {romanceLanguages[4].Language}</h1>
-            </article>
+            { romanceSection }
+          </div>
+        </div>
+        <div>
+          <h1>Polynesian Languages</h1>
+          <div className="grid">
+            { polynesianSection }
           </div>
         </div>
 
