@@ -21,8 +21,8 @@ function App() {
   const romanceLanguages = records.filter(  (item) => item.Branch === "Romance"  )
   const romanceSection = romanceLanguages.map( (item) => <LanguageCard item={item} /> )
 
-  const polynesianLanguages = records.filter(  (item) => item.Branch === "Malayo-Polynesian"  )
-  const polynesianSection = polynesianLanguages.map( (item) => <LanguageCard item={item} />)
+  const polynesianSection = records.filter(  (item) => item.Branch === "Malayo-Polynesian"  )
+                                   .map( (item) => <LanguageCard item={item} />)
   
   return (
     <>
