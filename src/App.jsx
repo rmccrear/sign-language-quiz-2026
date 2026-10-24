@@ -18,11 +18,6 @@ function App() {
   }
   console.log(records)
 
-  const romanceLanguages = records.filter(  (item) => item.Branch === "Romance"  )
-  const romanceSection = romanceLanguages.map( (item) => <LanguageCard item={item} /> )
-
-  const polynesianSection = records.filter(  (item) => item.Branch === "Malayo-Polynesian"  )
-                                   .map( (item) => <LanguageCard item={item} />)
   
   return (
     <>
@@ -30,13 +25,26 @@ function App() {
         <div>
           <h1>Romance Languages</h1>
           <div className="grid">
-            { romanceSection }
+            { 
+              records.filter(  (item) => item.Branch === "Romance"  ).map( (item) => <LanguageCard item={item} /> )
+            }
           </div>
         </div>
         <div>
           <h1>Polynesian Languages</h1>
           <div className="grid">
-            { polynesianSection }
+            {
+              records.filter(  (item) => item.Branch === "Malayo-Polynesian"  )
+                                             .map( (item) => <LanguageCard item={item} />)
+            }
+          </div>
+        </div>
+        <div>
+          <h1>Sinitic Languages</h1>
+          <div className="grid">
+            { 
+              records.filter(  (item) => item.Branch === "Sinitic"  ).map( (item) => <LanguageCard item={item} /> )
+            }
           </div>
         </div>
       </div>
